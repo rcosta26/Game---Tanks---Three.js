@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="https://github.com/rcosta26/Game---Tanks---Three.js/blob/master/logo.png" width=256 height=256>
+  <img src="https://github.com/rcosta26/Game---Tanks---Three.js/blob/master/logo.png" width=512 height=256>
 
   <h3 align="center"><b>Game</b></h3>
 
