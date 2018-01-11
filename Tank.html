@@ -1,0 +1,181 @@
+<html scroll="no" style="overflow: hidden" lang="en">
+
+<head>
+     
+
+     <meta charset="UTF-8">
+    <title>Tanque Bombardeiro</title>
+
+    <!--Icon da barra de separadores-->
+    <link rel="icon" href="img/favicon.ico" type="icon">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!--Libs-->
+    <script src="./libs/three.min.js"></script>
+    <script src="./libs/OrbitControls.js"></script>
+    <script type="text/javascript" src="./libs/stats.min.js"></script>
+
+
+    <!--Invocação do CSS-->
+    <link href="./resources/main.css" rel="stylesheet">
+
+    <!--Scripts-->
+    <script src="Tank.js"></script>
+
+
+
+</head>
+
+<body>
+    
+    <center>
+        <img id="img1" src="./resources/1.png" alt="Imagem não encontrada!">
+    </center>
+
+    <div class="row">
+        <button id="voltar"> Menu</button>
+        <center>
+            <div class=" col-md-3 ">
+                <a href="#bot" id="Single" onclick="modojogo(true)" class="test"><i class="material-icons">person</i> <br> 1 Jogador</a>
+            </div>
+            <div class="col-md-3 ">
+                <a href="#bot"  id="Multi"   onclick="modojogo(false)" class="test"><i class="material-icons">people</i> <br> 2 Jogadores</a>
+            </div>
+            <div class="col-md-3 ">
+                <a href="" class="test" data-toggle="modal" data-target="#myModal"><i  id="lock" class="material-icons" >videogame_asset</i> <br> Controles</a>
+            </div>
+            <div class="col-md-3">
+                <a href="" class="test" data-toggle="modal" data-target="#myModal1"><i class="material-icons">help_outline</i> <br> Como Jogar</a>
+            </div>
+        </center>
+
+    </div> 
+    <br>
+    <br>
+    <div class="row">
+        <center>
+        <div class=" col-md-3 ">
+            <h3>  Tanque 1 :</h3> 
+            <select id="tankskin">
+            <option value="forest">Floresta</option>
+            <option value="neve">Neve</option>
+            <option value="robot">Robot</option>
+            <option value="rosa">Rosa</option>
+            </select>
+        
+        </div>
+        <div class=" col-md-3 ">
+            <h3>  Tanque 2 :</h3> 
+            <select id="tank2skin">
+            <option value="neve">Neve</option>
+            <option value="forest">Floresta</option>
+            <option value="robot">Robot</option>
+            <option value="rosa">Rosa</option>
+            </select>
+        
+        </div>
+        <div class=" col-md-3 ">
+            <h3>  Bioma :</h3> 
+            <select id="bioma">
+            <option value="forest">Floresta</option>
+            <option value="neve">Neve</option>
+            </select>
+        
+        </div>
+        </center>
+    </div>
+
+    <!-- Modal Como Jogar-->
+    <div id="myModal1" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Como Jogar</h4>
+                </div>
+                <div class="modal-body">
+                    <p>--> Deverá selecionar as cores dos tanques e o bioma em que pretende jogar, de seguida carregue no modo de jogo para começar.</p>
+                    <p>--> Descole o tanque através dos controles disponíveis...</p>
+                    <p> :: Modo 1 Jogador: Cada Bot tem 5 pontos de vida, este mode consiste num mapa onde pode praticar os controles do tanque e a sua pontaria !</p>
+                    <p> :: Modo 2 Jogadores: junte-se com um amigo e tente sair vitorioso da arena !</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal Controles-->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Controles</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <center>
+                            <div class="col-md-6">
+                                <h4>Jogador 1</h4>
+                                <p>W - Andar para a frente</p>
+                                <p>S- Andar para a trás</p>
+                                <p>A - Virar para a esquerda</p>
+                                <p>D - Virar para a direita</p>
+                                <p>Space - Lançamento de bomba</p>
+                                <p>N - Virar para a esquerda o canhão</p>
+                                <p>M - Virar para a direita o canhão</p>
+                            </div>
+                            <div class="col-md-6">
+                                <img id="controles" src="./resources/controles.png" alt="Imagem não encontrada!">
+                            </div>
+                        </center>
+                    </div>
+                    <div class="row">
+                        <center>
+                            <div class="col-md-6">
+                                <img id="setas" src="./resources/setas.png" alt="Imagem não encontrada!">
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Jogador 2</h4>
+                                <p>Seta para cima - Andar para a frente</p>
+                                <p>Seta para baixo- Andar para a trás</p>
+                                <p>Seta para esquerda - Virar para a esquerda</p>
+                                <p>Seta para direita - Virar para a direita</p>
+                                <p>0- Lançamento de bomba</p>
+                                <p>1 - Virar para a esquerda o canhão</p>
+                                <p>2 - Virar para a direita o canhão</p>
+                            </div>
+                        </center>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="canvas-container" > <p id="stats"> </p></div>
+    <a id="bot"> </a>
+
+ 
+
+</body>
+
+</html>

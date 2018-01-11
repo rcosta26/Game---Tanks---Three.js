@@ -1,0 +1,56 @@
+body{
+    background-color: #364615;
+    margin-top: 1%;
+     overflow:hidden;
+}
+
+
+
+/*Estilização dos icons*/
+.material-icons{
+    margin-top: 25%;
+    font-size:7em;
+    color:white
+    
+}
+#stats{
+    font-size:20px;
+    color:white
+    
+
+}
+h3{
+        font-size:20px;
+    color:white
+}
+
+a.test {
+color: white;
+}
+
+
+#voltar {
+
+    background-color: #364615; 
+    color:white;
+    position: fixed;
+    right: 10%;
+    bottom: 10%;
+    height: 80px;
+    width: 150px;
+    
+}
+#canvas-container{
+    padding-top: 1000px;
+     background-color: #364615; 
+}
+
+#controles{
+    width: 200px;
+    margin-top: 40px;
+}
+
+#setas{
+    width: 200px;
+    margin-top: 60px;
+}
